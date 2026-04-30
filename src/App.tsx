@@ -84,37 +84,39 @@ function App() {
   const showNav = !hideNavRoutes.includes(location.pathname);
 
   return (
-    <div className="min-h-screen pb-24">
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        
-        <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/groups" element={<PrivateRoute><Groups /></PrivateRoute>} />
-        <Route path="/expenses" element={<PrivateRoute><Expenses /></PrivateRoute>} />
-        <Route path="/settings" element={<PrivateRoute><Settings /></PrivateRoute>} />
-      </Routes>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex justify-center">
+      <div className="w-full max-w-md bg-white dark:bg-slate-900 min-h-screen relative shadow-2xl shadow-slate-200 dark:shadow-none pb-24">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          
+          <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/groups" element={<PrivateRoute><Groups /></PrivateRoute>} />
+          <Route path="/expenses" element={<PrivateRoute><Expenses /></PrivateRoute>} />
+          <Route path="/settings" element={<PrivateRoute><Settings /></PrivateRoute>} />
+        </Routes>
 
-      {showNav && (
-        <nav className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50">
-          <Link to="/" className={`flex flex-col items-center gap-1 ${location.pathname === '/' ? 'text-brand-600' : 'text-slate-400'}`}>
-            <Home size={22} />
-            <span className="text-[10px] font-medium">Início</span>
-          </Link>
-          <Link to="/groups" className={`flex flex-col items-center gap-1 ${location.pathname === '/groups' ? 'text-brand-600' : 'text-slate-400'}`}>
-            <Users size={22} />
-            <span className="text-[10px] font-medium">Grupos</span>
-          </Link>
-          <Link to="/expenses" className={`flex flex-col items-center gap-1 ${location.pathname === '/expenses' ? 'text-brand-600' : 'text-slate-400'}`}>
-            <Receipt size={22} />
-            <span className="text-[10px] font-medium">Gastos</span>
-          </Link>
-          <Link to="/settings" className={`flex flex-col items-center gap-1 ${location.pathname === '/settings' ? 'text-brand-600' : 'text-slate-400'}`}>
-            <SettingsIcon size={22} />
-            <span className="text-[10px] font-medium">Ajustes</span>
-          </Link>
-        </nav>
-      )}
+        {showNav && (
+          <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 px-8 py-4 flex justify-between items-center z-50 rounded-t-3xl">
+            <Link to="/" className={`flex flex-col items-center gap-1.5 transition-colors ${location.pathname === '/' ? 'text-brand-500' : 'text-slate-400'}`}>
+              <Home size={24} strokeWidth={location.pathname === '/' ? 2.5 : 2} />
+              <span className="text-[10px] font-bold uppercase tracking-wider">Início</span>
+            </Link>
+            <Link to="/groups" className={`flex flex-col items-center gap-1.5 transition-colors ${location.pathname === '/groups' ? 'text-brand-500' : 'text-slate-400'}`}>
+              <Users size={24} strokeWidth={location.pathname === '/groups' ? 2.5 : 2} />
+              <span className="text-[10px] font-bold uppercase tracking-wider">Grupos</span>
+            </Link>
+            <Link to="/expenses" className={`flex flex-col items-center gap-1.5 transition-colors ${location.pathname === '/expenses' ? 'text-brand-500' : 'text-slate-400'}`}>
+              <Receipt size={24} strokeWidth={location.pathname === '/expenses' ? 2.5 : 2} />
+              <span className="text-[10px] font-bold uppercase tracking-wider">Gastos</span>
+            </Link>
+            <Link to="/settings" className={`flex flex-col items-center gap-1.5 transition-colors ${location.pathname === '/settings' ? 'text-brand-500' : 'text-slate-400'}`}>
+              <SettingsIcon size={24} strokeWidth={location.pathname === '/settings' ? 2.5 : 2} />
+              <span className="text-[10px] font-bold uppercase tracking-wider">Ajustes</span>
+            </Link>
+          </nav>
+        )}
+      </div>
     </div>
   )
 }
