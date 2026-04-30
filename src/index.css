@@ -24,10 +24,10 @@
   }
 
   .dark {
-    --bg-color: #0f172a; /* slate-900 */
+    --bg-color: #020617; /* slate-950 */
     --text-color: #f8fafc; /* slate-50 */
-    --card-bg: #1e293b; /* slate-800 */
-    --border-color: #334155; /* slate-700 */
+    --card-bg: #0f172a; /* slate-900 */
+    --border-color: #1e293b; /* slate-800 */
   }
   
   body {
@@ -35,14 +35,16 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    @apply font-sans;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-500 text-white px-4 py-2 rounded-xl font-semibold active:scale-95 transition-transform;
+    @apply bg-brand-500 text-white px-4 py-2 rounded-2xl font-bold active:scale-95 transition-all shadow-lg shadow-brand-500/20 hover:brightness-110;
   }
   .card {
-    @apply bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl shadow-sm transition-colors;
+    @apply bg-[var(--card-bg)] border border-[var(--border-color)] rounded-[2.5rem] shadow-sm transition-all;
   }
 }
+
