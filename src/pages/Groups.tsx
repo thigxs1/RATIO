@@ -30,7 +30,7 @@ export default function Groups() {
           <h1 className="text-3xl font-extrabold tracking-tight">Meus Grupos</h1>
           <p className="text-slate-500 dark:text-slate-400">Gerencie seus rateios</p>
         </div>
-        <button className="w-12 h-12 bg-brand-500 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/20 active:scale-90 transition-transform">
+        <button className="w-12 h-12 bg-brand-500 text-white rounded-2xl flex items-center justify-center shadow-lg active:scale-90 transition-transform">
           <Plus size={24} />
         </button>
       </header>
@@ -45,7 +45,7 @@ export default function Groups() {
         <div className="space-y-4">
           {groups.map((group: any) => (
             <div key={group.id} className="card p-5 flex items-center gap-4 active:scale-[0.98] transition-transform cursor-pointer">
-              <div className="w-14 h-14 bg-brand-50 dark:bg-brand-900/20 rounded-2xl flex items-center justify-center text-brand-600">
+              <div className="w-14 h-14 bg-brand-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-brand-600">
                 <UsersIcon size={28} />
               </div>
               <div className="flex-1">
@@ -65,7 +65,7 @@ export default function Groups() {
             <h3 className="text-xl font-bold">Nenhum grupo ainda</h3>
             <p className="text-slate-500 max-w-[200px] mx-auto text-sm">Crie seu primeiro grupo para começar a dividir gastos!</p>
           </div>
-          <button className="btn-primary py-3 px-8 shadow-xl shadow-brand-500/20">
+          <button className="btn-primary py-3 px-8 shadow-xl">
             Criar Primeiro Grupo
           </button>
         </div>

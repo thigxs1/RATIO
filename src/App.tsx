@@ -64,7 +64,7 @@ function Dashboard() {
       </section>
 
       {/* Botão Flutuante (Add Gasto) */}
-      <button className="fixed bottom-24 right-6 w-14 h-14 bg-brand-500 text-white rounded-full shadow-lg shadow-brand-200 dark:shadow-none flex items-center justify-center active:scale-90 transition-transform z-10">
+      <button className="fixed bottom-24 right-6 w-14 h-14 bg-brand-500 text-white rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-transform z-10">
         <Plus size={28} />
       </button>
     </div>
