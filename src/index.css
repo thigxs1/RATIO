@@ -4,16 +4,45 @@
 
 @layer base {
   :root {
-    --brand-primary: #0ea5e9;
+    /* Default Blue Theme (Tailwind Sky) */
+    --brand-50: #f0f9ff;
+    --brand-100: #e0f2fe;
+    --brand-200: #bae6fd;
+    --brand-300: #7dd3fc;
+    --brand-400: #38bdf8;
+    --brand-500: #0ea5e9;
+    --brand-600: #0284c7;
+    --brand-700: #0369a1;
+    --brand-800: #075985;
+    --brand-900: #0c4a6e;
+    --brand-950: #082f49;
+
+    --bg-color: #f8fafc; /* slate-50 */
+    --text-color: #0f172a; /* slate-900 */
+    --card-bg: #ffffff;
+    --border-color: #f1f5f9; /* slate-100 */
+  }
+
+  .dark {
+    --bg-color: #0f172a; /* slate-900 */
+    --text-color: #f8fafc; /* slate-50 */
+    --card-bg: #1e293b; /* slate-800 */
+    --border-color: #334155; /* slate-700 */
   }
   
   body {
     -webkit-tap-highlight-color: transparent;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply bg-brand-500 text-white px-4 py-2 rounded-xl font-semibold active:scale-95 transition-transform;
+  }
+  .card {
+    @apply bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl shadow-sm transition-colors;
   }
 }
